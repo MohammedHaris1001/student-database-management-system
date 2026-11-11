@@ -17,6 +17,11 @@ void add(SLL **ptr)
 	new->rollno=roll;
 	printf("enter name and percentage\n");
 	scanf("%s%f",new->name,&new->percentage);
+	while(new->percentage<0.00 || new->percentage>100.00)
+		{
+		printf("invalid percentage!");
+		scanf("%f",&new->percentage);
+		}
 	if((*ptr==0) || ((new->rollno)<((*ptr)->rollno)))
 	{
 	new->next=*ptr;
