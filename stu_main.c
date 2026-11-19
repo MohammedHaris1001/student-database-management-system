@@ -3,6 +3,7 @@ int main()
 {
 	SLL *headptr=0;
 	char ch,choice;
+	readfile(&headptr);
 	while(1)
 	{
 		printf("**********STUDENT RECORD MENU************\n");
