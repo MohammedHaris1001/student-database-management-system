@@ -18,5 +18,5 @@ void save(SLL *);
 void sort(SLL *,char);
 void rev(SLL **);
 void del_all(SLL **);
-
+void readfile(SLL **);
 
