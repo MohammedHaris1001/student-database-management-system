@@ -22,3 +22,33 @@ void save(SLL *ptr)
 	fclose(fp);
 }
 
+
+void readfile(SLL **ptr)
+{
+	SLL *new;
+	FILE *fp;
+	fp=fopen("student.dat","r");
+	if(fp==0)
+	{
+		printf("filenot present\n");
+		return;
+	}
+	while(1)
+	{
+		new=malloc(sizeof(SLL));
+		if(fscanf(fp,"%d%s%f",&new->rollno,new->name,&new->percentage)==-1)
+			break;
+			new->next=0;
+			if(*ptr==0)
+				*ptr=new;
+			else
+			{
+				SLL *last=*ptr;
+				while(last->next)
+					last=last->next;
+					last->next=new;
+			}
+	}
+}
+
+
